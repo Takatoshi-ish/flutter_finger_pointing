@@ -67,10 +67,10 @@ class _FingerPointingPageState extends State<FingerPointingPage> {
 
   void judge() {
     if (myArrow == computerArrow) {
-      print("自分：${myArrow}, 相手：${computerArrow}  回避失敗");
+      print('自分：${myArrow}, 相手：${computerArrow}  回避失敗');
       check = false;
     } else {
-      print("自分：${myArrow}, 相手：${computerArrow}  回避成功");
+      print('自分：${myArrow}, 相手：${computerArrow}  回避成功');
       result++;
     }
     if (result > topScore) {
@@ -89,17 +89,17 @@ class _FingerPointingPageState extends State<FingerPointingPage> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text(
-              "最高記録：${topScore}",
+              '最高記録：${topScore}',
               style: const TextStyle(fontSize: 32),
             ),
             const SizedBox(height: 48),
             Text(
-              "連続回避数：${result}",
+              '連続回避数：${result}',
               style: const TextStyle(fontSize: 27),
             ),
             const SizedBox(height: 16),
             const Text(
-              "コンピューターが差した向き",
+              'コンピューターが差した向き',
               style: TextStyle(fontSize: 27),
             ),
             Text(
@@ -108,7 +108,7 @@ class _FingerPointingPageState extends State<FingerPointingPage> {
             ),
             const SizedBox(height: 48),
             const Text(
-              "自分の顔の向き",
+              '自分の顔の向き',
               style: TextStyle(fontSize: 27),
             ),
             Text(
