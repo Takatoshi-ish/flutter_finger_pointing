@@ -11,11 +11,11 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'Finger Pointing',
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: FingerPointingPage(),
+      home: const FingerPointingPage(),
     );
   }
 }
@@ -82,7 +82,7 @@ class _FingerPointingPageState extends State<FingerPointingPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('あっち向いてホイ'),
+        title: const Text('あっち向いてホイ'),
       ),
       body: Center(
         child: Column(
@@ -90,32 +90,32 @@ class _FingerPointingPageState extends State<FingerPointingPage> {
           children: [
             Text(
               "最高記録：${topScore}",
-              style: TextStyle(fontSize: 32),
+              style: const TextStyle(fontSize: 32),
             ),
-            SizedBox(height: 48),
+            const SizedBox(height: 48),
             Text(
               "連続回避数：${result}",
-              style: TextStyle(fontSize: 27),
+              style: const TextStyle(fontSize: 27),
             ),
-            SizedBox(height: 16),
-            Text(
+            const SizedBox(height: 16),
+            const Text(
               "コンピューターが差した向き",
               style: TextStyle(fontSize: 27),
             ),
             Text(
               computerArrow,
-              style: TextStyle(fontSize: 32),
+              style: const TextStyle(fontSize: 32),
             ),
-            SizedBox(height: 48),
-            Text(
+            const SizedBox(height: 48),
+            const Text(
               "自分の顔の向き",
               style: TextStyle(fontSize: 27),
             ),
             Text(
               myArrow,
-              style: TextStyle(fontSize: 32),
+              style: const TextStyle(fontSize: 32),
             ),
-            SizedBox(height: 16),
+            const SizedBox(height: 16),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
@@ -123,29 +123,29 @@ class _FingerPointingPageState extends State<FingerPointingPage> {
                   onPressed: () {
                     selectArrow('↑');
                   },
-                  child: Text('↑'),
+                  child: const Text('↑'),
                 ),
                 ElevatedButton(
                   onPressed: () {
                     selectArrow('↓');
                   },
-                  child: Text('↓'),
+                  child: const Text('↓'),
                 ),
                 ElevatedButton(
                   onPressed: () {
                     selectArrow('←');
                   },
-                  child: Text('←'),
+                  child: const Text('←'),
                 ),
                 ElevatedButton(
                   onPressed: () {
                     selectArrow('→');
                   },
-                  child: Text('→'),
+                  child: const Text('→'),
                 ),
               ],
             ),
-            SizedBox(height: 16),
+            const SizedBox(height: 16),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
@@ -156,7 +156,7 @@ class _FingerPointingPageState extends State<FingerPointingPage> {
                     check = true;
                     setState(() {});
                   },
-                  child: Text('リセット'),
+                  child: const Text('リセット'),
                 ),
                 ElevatedButton(
                   onPressed: () {
@@ -164,7 +164,7 @@ class _FingerPointingPageState extends State<FingerPointingPage> {
                     check = true;
                     setState(() {});
                   },
-                  child: Text('もう一度挑戦する'),
+                  child: const Text('もう一度挑戦する'),
                 ),
               ],
             ),
