@@ -32,10 +32,10 @@ class _FingerPointingPageState extends State<FingerPointingPage> {
   String computerArrow = '';
   int result = 0;
   int topScore = 0;
-  bool check = true;
+  bool continuationCheck = true; //ゲームが続いているかチェック
 
   void selectArrow(String selectedArrow) {
-    if (check) {
+    if (continuationCheck) {
       myArrow = selectedArrow;
       print(myArrow);
       generateComputerArrow();
@@ -68,7 +68,7 @@ class _FingerPointingPageState extends State<FingerPointingPage> {
   void judge() {
     if (myArrow == computerArrow) {
       print('自分：${myArrow}, 相手：${computerArrow}  回避失敗');
-      check = false;
+      continuationCheck = false;
     } else {
       print('自分：${myArrow}, 相手：${computerArrow}  回避成功');
       result++;
@@ -153,7 +153,7 @@ class _FingerPointingPageState extends State<FingerPointingPage> {
                   onPressed: () {
                     result = 0;
                     topScore = 0;
-                    check = true;
+                    continuationCheck = true;
                     setState(() {});
                   },
                   child: const Text('リセット'),
@@ -161,7 +161,7 @@ class _FingerPointingPageState extends State<FingerPointingPage> {
                 ElevatedButton(
                   onPressed: () {
                     result = 0;
-                    check = true;
+                    continuationCheck = true;
                     setState(() {});
                   },
                   child: const Text('もう一度挑戦する'),
