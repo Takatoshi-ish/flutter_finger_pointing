@@ -78,6 +78,19 @@ class _FingerPointingPageState extends State<FingerPointingPage> {
     }
   }
 
+  void resetGame() {
+    result = 0;
+    topScore = 0;
+    continuationCheck = true;
+    setState(() {});
+  }
+
+  void againGame() {
+    result = 0;
+    continuationCheck = true;
+    setState(() {});
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -151,18 +164,13 @@ class _FingerPointingPageState extends State<FingerPointingPage> {
               children: [
                 ElevatedButton(
                   onPressed: () {
-                    result = 0;
-                    topScore = 0;
-                    continuationCheck = true;
-                    setState(() {});
+                    resetGame();
                   },
                   child: const Text('リセット'),
                 ),
                 ElevatedButton(
                   onPressed: () {
-                    result = 0;
-                    continuationCheck = true;
-                    setState(() {});
+                    againGame();
                   },
                   child: const Text('もう一度挑戦する'),
                 ),
