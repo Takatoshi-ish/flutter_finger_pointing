@@ -133,27 +133,35 @@ class _FingerPointingPageState extends State<FingerPointingPage> {
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
                 ElevatedButton(
-                  onPressed: () {
-                    selectArrow('↑');
-                  },
+                  onPressed: continuationCheck
+                      ? () {
+                          selectArrow('↑');
+                        }
+                      : null,
                   child: const Text('↑'),
                 ),
                 ElevatedButton(
-                  onPressed: () {
-                    selectArrow('↓');
-                  },
+                  onPressed: continuationCheck
+                      ? () {
+                          selectArrow('↓');
+                        }
+                      : null,
                   child: const Text('↓'),
                 ),
                 ElevatedButton(
-                  onPressed: () {
-                    selectArrow('←');
-                  },
+                  onPressed: continuationCheck
+                      ? () {
+                          selectArrow('←');
+                        }
+                      : null,
                   child: const Text('←'),
                 ),
                 ElevatedButton(
-                  onPressed: () {
-                    selectArrow('→');
-                  },
+                  onPressed: continuationCheck
+                      ? () {
+                          selectArrow('→');
+                        }
+                      : null,
                   child: const Text('→'),
                 ),
               ],
@@ -169,9 +177,11 @@ class _FingerPointingPageState extends State<FingerPointingPage> {
                   child: const Text('リセット'),
                 ),
                 ElevatedButton(
-                  onPressed: () {
-                    againGame();
-                  },
+                  onPressed: continuationCheck
+                      ? null
+                      : () {
+                          againGame();
+                        },
                   child: const Text('もう一度挑戦する'),
                 ),
               ],
